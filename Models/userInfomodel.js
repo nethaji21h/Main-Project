@@ -1,8 +1,8 @@
 
-
+const express = require('express')
 const mongoose = require('mongoose');
 
-const userInfoschema  = new mongoose.Schema({
+const userInfoschema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -18,15 +18,19 @@ const userInfoschema  = new mongoose.Schema({
     type: String,
     required: true
   },
-  phone: {
+  confirmationPassword: {
+    type: String,
+    required: true
+  },
+  MobileNumber: {
     type: String
   },
-  
+
 }, {
   timestamps: true
 });
 
 
 
-module.exports = mongoose.model('userInfo',userInfoschema)
+module.exports = mongoose.model('userInfo', userInfoschema)
 
